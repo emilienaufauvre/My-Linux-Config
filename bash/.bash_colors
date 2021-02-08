@@ -1,0 +1,23 @@
+# Powerline for Vim. 
+export TERM="xterm-256color"
+
+# Colored GCC warnings and errors.
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Prompt's colors.
+if [ "$color_prompt" = yes ]; then
+    PS1="\# \[\e[0;37m\]{\d | \A}\[\e[0;m\] \[\e[4;31m\]\u\[\e[0;m\] : \[\e[0;37m\]\w\[\e[0;m\] \[\e[0;31m\] \\$\[\e[0;m\] " # @\h after \u.  
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+
+# If this is an xterm set the title to user@host:dir.
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+unset color_prompt force_color_prompt
