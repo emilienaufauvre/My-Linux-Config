@@ -23,6 +23,8 @@ bash:
 	
 	# Runcom file...
 	@cp bash/.bashrc ~/.bashrc
+	@cp bash/.bash_aliases ~/.bash_aliases
+	@cp bash/.bash_colors ~/.bash_colors
 
 ####################################################################################################
 
