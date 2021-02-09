@@ -60,3 +60,8 @@ fi
 if [ -f ~/.bash_colors ]; then
     . ~/.bash_colors
 fi
+
+# Windows X server for WSL. 
+if [ -f ~/.bash_xserver ]; then
+    . ~/.bash_xserver
+fi
