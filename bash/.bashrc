@@ -51,6 +51,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Case sensitivity.
+bind 'set completion-ignore-case on'
+
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
