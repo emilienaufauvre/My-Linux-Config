@@ -80,8 +80,11 @@ theme:
 	@apt install gnome-themes-standard
 	# - Murrine engine...
 	@apt install gtk2-engines-murrine
-	# - Copy the theme...
-	@cp -r themes/OSX-Arc-Shadow-master ~/.themes/
+	# - Get the theme...
+	@wget https://github.com/thiagolucio/OSX-Arc-Shadow/archive/master.zip 
+	@unzip master.zip 
+	@mv OSX-Arc-Shadow-master ~/.themes/OSX-Arc-Shadow
+	@rm master.zip
 	
 	# Numix cirles icones:
 	# - Add the repo...
