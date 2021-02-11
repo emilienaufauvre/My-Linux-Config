@@ -1,6 +1,6 @@
-.PHONY: bash vim packages 
+.PHONY: bash vim theme packages 
 
-all: init bash vim packages end
+all: init bash vim theme packages end
 
 ####################################################################################################
 
@@ -10,6 +10,9 @@ init:
 	@echo - Starting the setup ---------------------------------------------------------------------
 	@echo ------------------------------------------------------------------------------------------
 
+	# Enabling universe repo setting...
+	@add-apt-repository universe
+	
 	# Cleaning Vim...
 	@rm -f -r ~/.vim
 
@@ -34,6 +37,9 @@ vim:
 	@echo ------------------------------------------------------------------------------------------
 	@echo - Vim ------------------------------------------------------------------------------------
 	@echo ------------------------------------------------------------------------------------------
+
+	# Vim.
+	@apt install vim
 		
 	# Runcom file...
 	@cp vim/.vimrc ~/.vimrc
@@ -58,6 +64,39 @@ vim:
 
 ####################################################################################################
 
+theme:
+
+	@echo ------------------------------------------------------------------------------------------
+	@echo - Theme ----------------------------------------------------------------------------------
+	@echo ------------------------------------------------------------------------------------------
+
+	# Gnome tweak tool...
+	@apt install gnome-tweak-tool
+	@apt install gnome-shell-extensions
+
+	# OSX-Arc app theme:
+	@mkdir -p ~/.themes
+	# - Gnome standard themes...
+	@apt install gnome-themes-standard
+	# - Murrine engine...
+	@apt install gtk2-engines-murrine
+	# - Copy the theme...
+	@cp -r themes/OSX-Arc-Shadow-master ~/.themes/
+	
+	# Numix cirles icones:
+	# - Add the repo...
+	@add-apt-repository ppa:numix/ppa
+	@apt update
+	# - Install the package...
+	@apt install numix-icon-theme-circle
+
+	# Gnome shell...
+	@cp -r themes/arc-mod ~/.themes/
+	@cp -r themes/arc-dark-mod ~/.themes/
+	
+
+####################################################################################################
+
 packages:
 
 	@echo ------------------------------------------------------------------------------------------
@@ -73,3 +112,6 @@ end:
 	@echo ------------------------------------------------------------------------------------------
 	@echo - Setup finished -------------------------------------------------------------------------
 	@echo ------------------------------------------------------------------------------------------
+
+	# Clean...
+	@apt autoremove
