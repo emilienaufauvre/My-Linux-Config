@@ -94,8 +94,8 @@ theme:
 	@apt install numix-icon-theme-circle
 
 	# Gnome shell...
-	@cp -r themes/arc-mod ~/.themes/
-	@cp -r themes/arc-dark-mod ~/.themes/
+	# @cp -r themes/arc-mod ~/.themes/
+	# @cp -r themes/arc-dark-mod ~/.themes/
 	
 
 ####################################################################################################
