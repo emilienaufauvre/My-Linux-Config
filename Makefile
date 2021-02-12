@@ -1,6 +1,6 @@
-.PHONY: bash vim theme packages 
+.PHONY: bash vim theme gnome packages 
 
-all: init bash vim theme packages end
+all: init bash vim theme gnome packages end
 
 ####################################################################################################
 
@@ -15,6 +15,12 @@ init:
 	
 	# Cleaning Vim...
 	@rm -f -r ~/.vim
+
+	# CLeaning themes...
+	@rm -f -r ~/.themes
+
+	# Cleanin Gnome...
+	@rm -f -r ~/.local/share/gnome-shell/extensions
 
 ####################################################################################################
 
@@ -70,10 +76,6 @@ theme:
 	@echo - Theme ----------------------------------------------------------------------------------
 	@echo ------------------------------------------------------------------------------------------
 
-	# Gnome tweak tool...
-	@apt install gnome-tweak-tool
-	@apt install gnome-shell-extensions
-
 	# OSX-Arc app theme:
 	@mkdir -p ~/.themes
 	# - Gnome standard themes...
@@ -97,6 +99,36 @@ theme:
 	# @cp -r themes/arc-mod ~/.themes/
 	# @cp -r themes/arc-dark-mod ~/.themes/
 	
+####################################################################################################
+
+gnome:
+
+	@echo ------------------------------------------------------------------------------------------
+	@echo - Gnome extension ------------------------------------------------------------------------
+	@echo ------------------------------------------------------------------------------------------
+
+	# Installing the gnome extensions:
+	# - User themes...
+	./utils.sh extract_gnome_extension \
+		gnome/user-themegnome-shell-extensions.gcampax.github.com.v42.shell-extension
+	# - Battery circular indicator...
+	./utils.sh extract_gnome_extension \
+		gnome/circular-battery-indicator@tannick.io.v1.shell-extension 
+	# - Dynamic panel transparency...
+	./utils.sh extract_gnome_extension \
+		gnome/dynamic-panel-transparencyrockon999.github.io.v34.shell-extension
+	# - No annoyance...
+	./utils.sh extract_gnome_extension \
+		gnome/noannoyancesindex.com.v4.shell-extension
+	# - Net speed...
+	./utils.sh extract_gnome_extension \
+		gnome/simplenetspeedbiji.extension.v20.shell-extension
+	# - Night light slider...
+	./utils.sh extract_gnome_extension \
+		gnome/night-light-slider.timurlinux.com.v18.shell-extension
+	# - Coverflow alt-tab...
+	./utils.sh extract_gnome_extension \
+		gnome/CoverflowAltTabpalatis.blogspot.com.v44.shell-extension
 
 ####################################################################################################
 
@@ -106,7 +138,8 @@ packages:
 	@echo - Packages -------------------------------------------------------------------------------
 	@echo ------------------------------------------------------------------------------------------
 
-	# Nothing for now.
+	# Gnome tweak tool...
+	@apt install gnome-tweak-tool
 
 ####################################################################################################
 
