@@ -11,9 +11,9 @@
 # mode because of the environment variables used in these script.                                  #
 ####################################################################################################
 
-.PHONY: bash vim theme gnome packages 
+.PHONY: bash vim package gnome theme 
 
-all: init bash vim theme gnome packages end
+all: init bash vim package gnome theme end
 
 ####################################################################################################
 
@@ -77,6 +77,40 @@ vim:
 	@git clone https://github.com/shougo/neocomplete.vim ~/.vim/bundle/neocomplete.vim
 	# -- Gruvbox (theme)...
 	@git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
+	
+####################################################################################################
+
+gnome:
+
+	@echo ------------------------------------------------------------------------------------------
+	@echo - Gnome extension ------------------------------------------------------------------------
+	@echo ------------------------------------------------------------------------------------------
+
+	# Installing the gnome extensions:
+	# - User themes...
+	@./utils.sh extract_gnome_extension \
+		gnome/user-themegnome-shell-extensions.gcampax.github.com.v42.shell-extension
+	# - Battery circular indicator...
+	@./utils.sh extract_gnome_extension \
+		gnome/circular-battery-indicator@tannick.io.v1.shell-extension 
+	# - Net speed...
+	@./utils.sh extract_gnome_extension \
+		gnome/simplenetspeedbiji.extension.v20.shell-extension
+	# - No annoyance...
+	@./utils.sh extract_gnome_extension \
+		gnome/noannoyancesindex.com.v4.shell-extension
+	# - Night light slider...
+	@./utils.sh extract_gnome_extension \
+		gnome/night-light-slider.timurlinux.com.v18.shell-extension
+	# - Coverflow alt-tab...
+	@./utils.sh extract_gnome_extension \
+		gnome/CoverflowAltTabpalatis.blogspot.com.v44.shell-extension
+
+	# Add user theme schema for gnome shell theme...
+	@sudo cp ~/.local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions\
+	.gcampax.github.com/schemas/org.gnome.shell.extensions.user-theme.gschema.xml \
+		/usr/share/glib-2.0/schemas
+	@sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
 ####################################################################################################
 
@@ -111,36 +145,7 @@ theme:
 	@gsettings set org.gnome.desktop.interface icon-theme Numix-Circle
 
 	# Gnome shell...
-	# @cp -r themes/arc-mod ~/.themes/
-	# @cp -r themes/arc-dark-mod ~/.themes/
-	
-####################################################################################################
-
-gnome:
-
-	@echo ------------------------------------------------------------------------------------------
-	@echo - Gnome extension ------------------------------------------------------------------------
-	@echo ------------------------------------------------------------------------------------------
-
-	# Installing the gnome extensions:
-	# - User themes...
-	@./utils.sh extract_gnome_extension \
-		gnome/user-themegnome-shell-extensions.gcampax.github.com.v42.shell-extension
-	# - Battery circular indicator...
-	@./utils.sh extract_gnome_extension \
-		gnome/circular-battery-indicator@tannick.io.v1.shell-extension 
-	# - Net speed...
-	@./utils.sh extract_gnome_extension \
-		gnome/simplenetspeedbiji.extension.v20.shell-extension
-	# - No annoyance...
-	@./utils.sh extract_gnome_extension \
-		gnome/noannoyancesindex.com.v4.shell-extension
-	# - Night light slider...
-	@./utils.sh extract_gnome_extension \
-		gnome/night-light-slider.timurlinux.com.v18.shell-extension
-	# - Coverflow alt-tab...
-	@./utils.sh extract_gnome_extension \
-		gnome/CoverflowAltTabpalatis.blogspot.com.v44.shell-extension
+	@gsettings set org.gnome.shell.extensions.user-theme name OSX-Arc-Shadow 
 
 ####################################################################################################
 

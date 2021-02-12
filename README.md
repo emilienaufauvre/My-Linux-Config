@@ -4,7 +4,6 @@ A simple set-up for the Ubuntu packages, themes, gnome, the Bash and Vim.
 
 ## Set-up
 
-`sudo -E make`
+`make`
 
-> Using the super user mode is necessary for packages. The -E option is needed
-unless if you want to apply the set-up to the super user.
+> To install the configuration for the current user. 
