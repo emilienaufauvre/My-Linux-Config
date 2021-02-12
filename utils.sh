@@ -9,6 +9,8 @@ function extract_gnome_extension()
 	mkdir -p $DIR 
 	# Unzip and move in this directory.
 	unzip -q $1 -d $DIR	
+	# Enable the "metadata.json".
+	chmod 664 $DIR/metadata.json
 	# Enable it.
 	gnome-extensions enable $UUID
 }
