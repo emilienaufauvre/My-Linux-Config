@@ -105,6 +105,9 @@ gnome:
 	# - Coverflow alt-tab...
 	@./utils.sh extract_gnome_extension \
 		gnome/CoverflowAltTabpalatis.blogspot.com.v44.shell-extension
+	# - Top bar transparency...
+	@./utils.sh extract_gnome_extension \
+		gnome/transparent-top-barftpix.com.v2.shell-extension
 
 	# Add user theme schema for gnome shell theme...
 	@sudo cp ~/.local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions\
