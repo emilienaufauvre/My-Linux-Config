@@ -29,11 +29,12 @@ nnoremap <C-e> $
 set ignorecase
 set incsearch " Highlight during.
 set hlsearch  " Highlight results.
-" Auto-tab + tab size.
+" Auto-tab + replace tab with 4 spaces.
 filetype plugin indent on  
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
+set expandtab
 " Auto completion with tab.
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
