@@ -1,9 +1,20 @@
-# My Linux (Ubuntu) configuration
-
 [![Generic badge](https://img.shields.io/badge/license-Unlicense-green.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/Last%20tests-Ubuntu%2020.04%20LTS-orange)](https://shields.io/)
 
-A simple set-up for the Ubuntu packages, themes, gnome, the Bash and Vim.
+<div align="center">
+	<br>
+	<br>
+  	<a href="https://ubuntu.com">
+		<img src="assets/ubuntu.svg" width="200" height="200">
+	</a>	
+	<h1>My Linux (Ubuntu) configuration</h1>
+	<p>
+	<b>A simple set-up for the Ubuntu packages, themes, gnome, the Bash and Vim.</b>
+	</p>
+	<br>
+	<br>
+	<br>
+</div>
 
 ## Set-up
 
