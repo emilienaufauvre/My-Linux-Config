@@ -5,7 +5,7 @@
 	<br>
 	<br>
   	<a href="https://ubuntu.com">
-		<img src="assets/ubuntu.svg" width="200" height="200">
+		<img src="ubuntu.svg" width="200" height="200">
 	</a>	
 	<h1>My Linux (Ubuntu) configuration</h1>
 	<p>
