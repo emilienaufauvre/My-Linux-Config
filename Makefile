@@ -1,5 +1,5 @@
 ####################################################################################################
-# "sudo" is used for each line requiring it, because:											   #
+# "sudo" is used for each line requiring it, because:                                              #
 # - using "sudo -E make" will interfere with the "dconf" settings (i.e we can't execute the entire #
 #   makefile in super user mode, because these command can't be run as root),                      #
 # - and using "sudo -u <user>" before the "dcond" commands to force the normal user mode will not  #
