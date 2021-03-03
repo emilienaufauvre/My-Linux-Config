@@ -13,7 +13,7 @@
 
 .PHONY: bash vim package gnome theme 
 
-all: init bash vim package gnome theme end
+all: init bash vim packages gnome theme end
 
 ####################################################################################################
 
@@ -24,7 +24,7 @@ init:
 	@echo ------------------------------------------------------------------------------------------
 
 	# Enabling universe repo setting...
-	@sudo add-apt-repository universe
+	@sudo add-apt-repository -y universe
 	
 	# Cleaning Vim...
 	@sudo rm -f -r ~/.vim
@@ -61,7 +61,7 @@ vim:
 	@sudo cp vim/.vimrc ~/.vimrc
 
 	# Xclip...
-	@sudo apt install xclip
+	@sudo apt install -y xclip
 	
 	# Plugins:	
 	# - Pathogen...
@@ -127,9 +127,9 @@ theme:
 	# - Creating the directory...
 	@sudo mkdir -p ~/.themes
 	# - Gnome standard themes (necessary)...
-	@sudo apt install gnome-themes-standard
+	@sudo apt install -y gnome-themes-standard
 	# - Murrine engine (necessary)...
-	@sudo apt install gtk2-engines-murrine
+	@sudo apt install -y gtk2-engines-murrine
 	# - Get the theme...
 	@wget https://github.com/thiagolucio/OSX-Arc-Shadow/archive/master.zip 
 	@unzip master.zip 
@@ -140,10 +140,10 @@ theme:
 
 	# Numix cirles icones:
 	# - Add the repo...
-	@sudo add-apt-repository ppa:numix/ppa
+	@sudo add-apt-repository -y ppa:numix/ppa
 	@sudo apt update
 	# - Install the package...
-	@sudo apt install numix-icon-theme-circle
+	@sudo apt install -y numix-icon-theme-circle
 	# - Enable it...
 	@gsettings set org.gnome.desktop.interface icon-theme Numix-Circle
 
@@ -159,13 +159,16 @@ packages:
 	@echo ------------------------------------------------------------------------------------------
 
 	# Vim...
-	@sudo apt install vim
+	@sudo apt install -y vim
 
 	# Gnome tweak tool...
-	@sudo apt install gnome-tweak-tool
+	@sudo apt install -y gnome-tweak-tool
 
 	# Caprine (fb messenger)...
 	@sudo snap install caprine
+
+	# Deezer...
+	@sudo snap install deezer-unofficial-player
 
 ####################################################################################################
 
