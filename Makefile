@@ -11,9 +11,9 @@
 # mode because of the environment variables used in these script.                                  #
 ####################################################################################################
 
-.PHONY: bash vim package gnome theme 
+.PHONY: packages bash vim gnome theme 
 
-all: init bash vim packages gnome theme end
+all: init packages bash vim gnome theme end
 
 ####################################################################################################
 
@@ -158,17 +158,36 @@ packages:
 	@echo - Packages -------------------------------------------------------------------------------
 	@echo ------------------------------------------------------------------------------------------
 
+	# Update...
+	@sudo apt update
+	
 	# Vim...
 	@sudo apt install -y vim
 
 	# Gnome tweak tool...
 	@sudo apt install -y gnome-tweak-tool
+	
+	# Curl...
+	@sudo apt install -y curl
 
 	# Caprine (fb messenger)...
 	@sudo snap install caprine
 
 	# Deezer...
 	@sudo snap install deezer-unofficial-player
+	
+	# Brave...
+	@sudo apt install apt-transport-https curl gnupg
+
+	@curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc \
+	| sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+
+	@echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ \
+	stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+	@sudo apt update
+
+	@sudo apt install brave-browser
 
 ####################################################################################################
 
