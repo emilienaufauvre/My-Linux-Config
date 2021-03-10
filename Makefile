@@ -177,7 +177,7 @@ packages:
 	@sudo snap install deezer-unofficial-player
 	
 	# Brave...
-	@sudo apt install apt-transport-https curl gnupg
+	@sudo apt install -y apt-transport-https curl gnupg
 
 	@curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc \
 	| sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
@@ -187,7 +187,7 @@ packages:
 
 	@sudo apt update
 
-	@sudo apt install brave-browser
+	@sudo apt install -y brave-browser
 
 ####################################################################################################
 
