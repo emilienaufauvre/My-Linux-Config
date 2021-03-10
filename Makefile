@@ -77,6 +77,9 @@ vim:
 	@git clone https://github.com/shougo/neocomplete.vim ~/.vim/bundle/neocomplete.vim
 	# -- Gruvbox (theme)...
 	@git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
+
+	# JetBrains...
+	ln -s ~/.vimrc ~/.ideavimrc
 	
 ####################################################################################################
 

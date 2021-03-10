@@ -26,7 +26,7 @@ To install the configuration for the current user:
 user:~/My-Linux-Config/ $ make
 ```
 
-> Remember to press the <kbd>Alt</kbd> + <kbd>F2</kbd> combinaison and type `r` 
+> Remember to press the <kbd>Alt</kbd> + <kbd>F2</kbd> combinaison and type <kbd>r</kbd> 
   before pressing <kbd>Enter</kbd>. It will restart the gnome shell, and apply the 
   changes.
   
