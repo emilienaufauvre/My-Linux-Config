@@ -164,6 +164,9 @@ packages:
 	# Update...
 	@sudo apt update
 	
+	# Git...
+	@sudo apt install -y git
+	
 	# Vim...
 	@sudo apt install -y vim
 
